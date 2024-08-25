@@ -1,6 +1,6 @@
 local M = {}
 --
---
+
 M.options = {}
 
 M.setup = function(opts)
@@ -32,24 +32,7 @@ M.get_options = function(opts)
     -- Return
     return opts_arr
 end
---
--- local convert_opts_to_string = function(opts)
---     local _opts = ""
---     for key, value in pairs(opts) do
---         _opts = _opts .. "--" .. key
---         if value ~= true then
---             _opts = _opts .. "="
---             if type(value) == "string" then
---                 _opts="'" .. value .."'"
---             else
---             end
---         end
---         _opts = _opts .. " "
---     end
---     _opts = _opts:gsub("_", "-")
---     return _opts
--- end
---
+
 M.get_lines = function()
     -- Get mode
     local mode = vim.api.nvim_get_mode().mode
@@ -93,9 +76,9 @@ M.screenshot = function()
     local opts = M.get_options(M.options)
     local lines = M.get_lines()
 
-    local command = {executable, unpack(opts)}
+    local command = { executable, unpack(opts) }
     if M.check_command(executable) then
-        local output = vim.system(command, {stdin = lines}):wait()
+        local output = vim.system(command, { stdin = lines }):wait()
         if output.code ~= 0 then
             vim.notify("Command failed with code " .. output.code .. "!", vim.log.levels.ERROR)
         end
@@ -104,4 +87,5 @@ M.screenshot = function()
     end
 end
 
+--
 return M
