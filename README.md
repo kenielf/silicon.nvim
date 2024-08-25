@@ -5,6 +5,13 @@ A very simple wrapper for [silicon] in [neovim].
 [silicon]: https://github.com/Aloxaf/silicon
 [neovim]: https://github.com/neovim/neovim/
 
+> [!NOTE]
+> For WSL support and more extended behavior, please see 
+> [michaelrommel/nvim-silicon] as this plugin is heavily inspired by his.
+
+[michaelrommel/nvim-silicon]: https://github.com/michaelrommel/nvim-silicon
+
+## Index
 <!--toc:start-->
 - [Silicon](#silicon)
   - [How it works](#how-it-works)
@@ -13,12 +20,6 @@ A very simple wrapper for [silicon] in [neovim].
   - [Configuring](#configuring)
     - [Example: Catppuccin](#example-catppuccin)
 <!--toc:end-->
-
-> [!NOTE]
-> For WSL support and more extended behavior, please see 
-> [michaelrommel/nvim-silicon] as this plugin is heavily inspired by his.
-
-[michaelrommel/nvim-silicon]: https://github.com/michaelrommel/nvim-silicon
 
 ## How it works
 The plugin uses neovim's `vim.bo.filetype` and visual mode markers when 
@@ -81,7 +82,7 @@ vim.keymap.set(
 )
 ```
 
-!> [!WARNING]
+> [!WARNING]
 > Silicon themes follow the [bat] format, so any non default themes must be 
 > added and refreshed with `silicon --build-cache` manually!
 > 
