@@ -81,6 +81,8 @@ M.screenshot = function()
         local output = vim.system(command, { stdin = lines }):wait()
         if output.code ~= 0 then
             vim.notify("Command failed with code " .. output.code .. "!", vim.log.levels.ERROR)
+        else
+            vim.notify("Took a screenshot of the code!")
         end
     else
         vim.notify("Executable '" .. executable .. "' does not exist!", vim.log.levels.ERROR)
