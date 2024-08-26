@@ -9,6 +9,8 @@ A very simple wrapper for [silicon] in [neovim].
 > For WSL support and more extended behavior, please see 
 > [michaelrommel/nvim-silicon] as this plugin is heavily inspired by his.
 
+![Showcase Example](/assets/showcase.png)
+
 [michaelrommel/nvim-silicon]: https://github.com/michaelrommel/nvim-silicon
 
 ## Index
