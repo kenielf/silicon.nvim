@@ -79,7 +79,7 @@ M.screenshot = function()
     local command = { executable, unpack(opts) }
     if M.check_command(executable) then
         local output = vim.system(command, { stdin = lines }):wait()
-        vim.notify("Running: '" .. command .. "'")
+        vim.notify("Running: '" .. vim.inspect(command) .. "'")
         if output.code ~= 0 then
             vim.notify("Command failed with code " .. output.code .. "!", vim.log.levels.ERROR)
         else
